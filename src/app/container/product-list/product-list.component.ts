@@ -54,6 +54,7 @@ export class ProductListComponent {
       size: [6, 7, 8, 9, 10],
       color: ["White", "Blue", "Black"],
       price: 130.0,
+      discountPrice: 110.0,
       is_in_inventory: false,
       items_left: 3,
       imageURL: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXMSndyrLxkFZ2KNb0faqVY0KW4NTevlPuYO-bEikFgmScommYm8PZCaCbqJXqA-jA-8E",

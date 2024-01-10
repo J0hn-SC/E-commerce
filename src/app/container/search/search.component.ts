@@ -1,5 +1,5 @@
 import { NgClass, NgIf } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -15,11 +15,20 @@ export class SearchComponent {
   @Output()
   changeSearchText : EventEmitter<string> = new EventEmitter<string>();
 
+
+  @ViewChild('searchInput') searchInputEl : ElementRef;
+
+
+
   onChangeSearchText(){
     this.changeSearchText.emit(this.searchText);
   }
   updateSearchText(inputEl : HTMLInputElement){
     this.searchText = inputEl.value;
+    this.changeSearchText.emit(this.searchText);
+  }
+  updateSearchText2(){
+    this.searchText =  this.searchInputEl.nativeElement.value;
     this.changeSearchText.emit(this.searchText);
   }
 }

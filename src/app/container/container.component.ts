@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { SearchComponent } from './search/search.component';
 import { NgFor, NgIf } from '@angular/common';
 import { ProductListComponent } from './product-list/product-list.component';
@@ -33,6 +33,9 @@ export class ContainerComponent {
   increment(){
     if(this.addToCart <= this.product.inStock) this.addToCart++;
   }
+  //you can use the tag or if there is just one component you can use the cluase inside ViewChild
+  //@ViewChild('productListComponent') productListComponent: ProductListComponent;
+  @ViewChild(ProductListComponent) productListComponent: ProductListComponent;
 
   searchText : string = "";
   setSearchText(value : string){
